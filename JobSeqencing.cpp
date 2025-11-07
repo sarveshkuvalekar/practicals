@@ -62,3 +62,23 @@ int main() {
 
     return 0;
 }
+
+
+//user input
+int main() {
+    int n;
+    cout << "Enter number of jobs: ";
+    cin >> n;
+
+    vector<Job> jobs(n);
+
+    cout << "Enter job details (JobID Deadline Profit):\n";
+    for (int i = 0; i < n; i++) {
+        cout << "Job " << i + 1 << ": ";
+        cin >> jobs[i].job_id >> jobs[i].deadline >> jobs[i].profit;
+    }
+
+    jobSequencing(jobs);
+
+    return 0;
+}
