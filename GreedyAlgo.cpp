@@ -48,3 +48,36 @@ int main() {
 
     return 0;
 }
+
+
+//user input
+int main() {
+    int n, capacity;
+
+    // Take number of items
+    cout << "Enter number of items: ";
+    cin >> n;
+
+    // Declare array of items
+    Item items[n];
+
+    // Take weight and value for each item
+    cout << "Enter weight and value of each item:\n";
+    for (int i = 0; i < n; i++) {
+        cout << "Item " << i + 1 << " - Weight: ";
+        cin >> items[i].weight;
+        cout << "Item " << i + 1 << " - Value: ";
+        cin >> items[i].value;
+    }
+
+    // Take capacity
+    cout << "Enter capacity of knapsack: ";
+    cin >> capacity;
+
+    // Calculate max value
+    double maxValue = fractionalKnapsack(items, n, capacity);
+
+    cout << "\nMaximum value in Knapsack = " << maxValue << endl;
+
+    return 0;
+}
