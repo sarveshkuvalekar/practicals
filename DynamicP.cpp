@@ -33,3 +33,34 @@ int main() {
 
     return 0;
 }
+
+
+//user input
+int main() {
+    int n, W;
+
+    // Take number of items
+    cout << "Enter number of items: ";
+    cin >> n;
+
+    int weight[n], value[n];
+
+    // Take weight and value of each item
+    cout << "Enter weight and value of each item:\n";
+    for (int i = 0; i < n; i++) {
+        cout << "Item " << i + 1 << " - Weight: ";
+        cin >> weight[i];
+        cout << "Item " << i + 1 << " - Value: ";
+        cin >> value[i];
+    }
+
+    // Take capacity
+    cout << "Enter capacity of knapsack: ";
+    cin >> W;
+
+    // Compute maximum value
+    int maxValue = knapsack(W, weight, value, n);
+    cout << "\nMaximum value in Knapsack = " << maxValue << endl;
+
+    return 0;
+}
